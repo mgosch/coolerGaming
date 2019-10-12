@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Juego {
 
@@ -6,7 +7,7 @@ public class Juego {
 	private int porcentaje;
 	private String descripcion;
 	private long codigo;
-	private Calificacion calificacion;
+	private List<Calificacion> listaCalificacion;
 	private Genero genero;
 	
 	public String getNombre() {
@@ -49,20 +50,20 @@ public class Juego {
 		this.codigo = codigo;
 	}
 	
-	public Calificacion getCalificacion() {
-		return calificacion;
-	}
-	
-	public void setCalificacion(Calificacion calificacion) {
-		this.calificacion = calificacion;
-	}
-	
 	public Genero getGenero() {
 		return genero;
 	}
 	
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+
+	public List<Calificacion> getListaCalificacion() {
+		return listaCalificacion;
+	}
+
+	public void setListaCalificacion(List<Calificacion> listaCalificacion) {
+		this.listaCalificacion = listaCalificacion;
 	}
 	
 }
