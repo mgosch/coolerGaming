@@ -18,7 +18,10 @@ public class UsuarioRegistrado {
         this.fechaNacimiento = fechaNacimiento;
         this.mail = mail;
         this.telefono = telefono;
-        
+    }
+
+    UsuarioRegistrado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             
 		
