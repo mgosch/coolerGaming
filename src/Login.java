@@ -30,7 +30,7 @@ public class Login {
         }
         
         public void verificarUsuario(String usuario, String pass){
-            if (usuarioRegistrado.getUsuario().equals(usuario) && usuarioRegistrado.getContraseña().equals(pass)) {
+            if (usuarioRegistrado.getUsuario().equals(usuario) && usuarioRegistrado.getContrasena().equals(pass)) {
                 System.out.println("Usuario validado");
             } else {
                 System.out.println("Acceso denegado");
