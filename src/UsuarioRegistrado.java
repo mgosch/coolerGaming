@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UsuarioRegistrado {
@@ -10,12 +12,12 @@ public class UsuarioRegistrado {
 	private String mail;
 	private int telefono;
 
-    public UsuarioRegistrado(String nombre, String apellido, String usuario, String contrasena, Date fechaNacimiento, String mail, int telefono) {
+    public UsuarioRegistrado(String nombre, String apellido, String usuario, String contrasena, String fechaNacimiento, String mail, int telefono) throws ParseException{
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
         this.contrasena = contrasena;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento);
         this.mail = mail;
         this.telefono = telefono;
     }

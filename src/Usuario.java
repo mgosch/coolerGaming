@@ -1,10 +1,10 @@
-import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 public class Usuario {
 
 	public UsuarioRegistrado registrarse(String nombre, String apellido, String usuario, String contrasena, 
-            String fechaNacimiento, String mail, int telefono) throws Exception {
-		UsuarioRegistrado usuarioRegistrado =  new UsuarioRegistrado(nombre, apellido, usuario, contrasena, new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento), mail, telefono);
+            String fechaNacimiento, String mail, int telefono) throws ParseException{
+		UsuarioRegistrado usuarioRegistrado =  new UsuarioRegistrado(nombre, apellido, usuario, contrasena, fechaNacimiento, mail, telefono);
 	 return usuarioRegistrado;
 	}
 }
