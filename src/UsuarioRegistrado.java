@@ -18,6 +18,7 @@ public class UsuarioRegistrado {
         this.fechaNacimiento = fechaNacimiento;
         this.mail = mail;
         this.telefono = telefono;
+        
     }
             
 		
