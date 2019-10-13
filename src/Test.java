@@ -17,7 +17,10 @@ public class Test {
     	
         UsuarioRegistrado ur = new UsuarioRegistrado("Aldo", "Rico", "Admin", "Admin", "10/08/1983", "admin@admin,com", 42121212);
         Login log = new Login(ur);
-        String mensaje = log.loguearse("Admin", "Admin");
-    	System.out.println(mensaje);
+        String mensajeExitoso = log.loguearse("Admin", "Admin");
+    	System.out.println(mensajeExitoso);
+        Login log1 = new Login(ur1);
+        String mensajeFallido = log1.loguearse("Admin", "Admin");
+    	System.out.println(mensajeFallido);
     }
 }
