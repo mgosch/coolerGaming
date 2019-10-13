@@ -15,8 +15,8 @@ public class Test {
     public static void main(String[] args) {
         UsuarioRegistrado ur = new UsuarioRegistrado("Aldo", "Rico", "Admin", "Admin", null, "admin@admin,com", 42121212);
         
-
+        Login log = new Login(ur);
         
-        
+        System.out.println(log.loguearse("Admin", "pepe"));
     }
 }

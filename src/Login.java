@@ -25,15 +25,15 @@ public class Login {
 		this.usuarioRegistrado = usuarioRegistrado;
 	}
 
-        public void loguearse(String usuario, String pass){
-            verificarUsuario(usuario, pass);
+        public String loguearse(String usuario, String pass){
+            return verificarUsuario(usuario, pass);          
         }
         
-        public void verificarUsuario(String usuario, String pass){
+        public String verificarUsuario(String usuario, String pass){
             if (usuarioRegistrado.getUsuario().equals(usuario) && usuarioRegistrado.getContraseña().equals(pass)) {
-                System.out.println("Usuario validado");
+                return "Usuario validado";
             } else {
-                System.out.println("Acceso denegado");
+                return "Acceso denegado";
             }
         }
 	
