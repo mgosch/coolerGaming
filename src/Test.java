@@ -17,6 +17,6 @@ public class Test {
         
         Login log = new Login(ur);
         
-        System.out.println(log.loguearse("Admin", "pepe"));
+        System.out.println(log.loguearse("Admin", "Admin"));
     }
 }
