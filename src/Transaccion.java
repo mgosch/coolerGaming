@@ -1,10 +1,14 @@
 
+import java.util.List;
+
+
 public class Transaccion {
 
 	private float totalTransaccion;
 	private int cantJuegos;
 	private TarjetaDeCredito tarjetaDeCredito;
 	private UsuarioRegistrado usuarioRegistrado;
+        private List<Juego> juegos;
 	
 	public float getTotalTransaccion() {
 		return totalTransaccion;
@@ -37,5 +41,13 @@ public class Transaccion {
 	public void setUsuarioRegistrado(UsuarioRegistrado usuarioRegistrado) {
 		this.usuarioRegistrado = usuarioRegistrado;
 	}
+
+    public List<Juego> getJuegos() {
+        return juegos;
+    }
+
+    public void setJuegos(List<Juego> juegos) {
+        this.juegos = juegos;
+    }
 	
 }

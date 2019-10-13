@@ -5,12 +5,22 @@ public class UsuarioRegistrado {
 	private String nombre;
 	private String apellido;
 	private String usuario;
-	private String contrase�a;
+	private String contraseña;
 	private Date fechaNacimiento;
 	private String mail;
 	private int telefono;
-	
-	
+
+    public UsuarioRegistrado(String nombre, String apellido, String usuario, String contraseña, Date fechaNacimiento, String mail, int telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+        this.fechaNacimiento = fechaNacimiento;
+        this.mail = mail;
+        this.telefono = telefono;
+    }
+            
+		
 	public String getNombre() {
 		return nombre;
 	}
@@ -35,12 +45,12 @@ public class UsuarioRegistrado {
 		this.usuario = usuario;
 	}
 
-	public String getContrase�a() {
-		return contrase�a;
+	public String getContraseña() {
+		return contraseña;
 	}
 
-	public void setContrase�a(String contrase�a) {
-		this.contrase�a = contrase�a;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 
 	public Date getFechaNacimiento() {
@@ -65,10 +75,6 @@ public class UsuarioRegistrado {
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Hola Mundo, probando");
 	}
 	
 }

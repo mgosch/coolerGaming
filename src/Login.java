@@ -4,6 +4,10 @@ public class Login {
 
 	private Date fecha;
 	private UsuarioRegistrado usuarioRegistrado;
+
+    public Login(UsuarioRegistrado usuarioRegistrado) {
+        this.usuarioRegistrado = usuarioRegistrado;
+    }
 	
 	public Date getFecha() {
 		return fecha;
@@ -20,6 +24,17 @@ public class Login {
 	public void setUsuarioRegistrado(UsuarioRegistrado usuarioRegistrado) {
 		this.usuarioRegistrado = usuarioRegistrado;
 	}
-	
+
+        public void loguearse(String usuario, String pass){
+            verificarUsuario(usuario, pass);
+        }
+        
+        public void verificarUsuario(String usuario, String pass){
+            if (usuarioRegistrado.getUsuario().equals(usuario) && usuarioRegistrado.getContraseña().equals(pass)) {
+                System.out.println("Usuario validado");
+            } else {
+                System.out.println("Acceso denegado");
+            }
+        }
 	
 }
