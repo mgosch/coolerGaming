@@ -1,6 +1,9 @@
+package coolerGaming;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class UsuarioRegistrado {
 
@@ -81,6 +84,12 @@ public class UsuarioRegistrado {
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+
+	public List<Juego> buscarJuego() {
+		List<Juego> listJuego = new ArrayList();
+		return listJuego;
+		
 	}
 	
 }

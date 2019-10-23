@@ -1,9 +1,16 @@
+package coolerGaming;
 
 public class Calificacion {
 
 	private String comentario;
 	private int puntaje;
 	private UsuarioRegistrado usuarioRegistrado;
+	
+	public Calificacion(String comentario, int puntaje, UsuarioRegistrado usuarioRegistrado) {
+		this.comentario = comentario;
+		this.puntaje = puntaje;
+		this.usuarioRegistrado = usuarioRegistrado;
+	}
 	
 	public String getComentario() {
 		return comentario;

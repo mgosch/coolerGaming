@@ -1,3 +1,4 @@
+package coolerGaming;
 import java.util.List;
 
 public class Juego {
@@ -9,6 +10,16 @@ public class Juego {
 	private long codigo;
 	private List<Calificacion> listaCalificacion;
 	private List<Genero> genero;
+	
+	public Juego(String nombre, float precio, int porcentaje, String descripcion, long codigo, List<Calificacion> listaCalificacion, List<Genero> genero){
+			this.nombre=nombre;
+			this.precio=precio;
+			this.porcentaje=porcentaje;
+			this.descripcion=descripcion;
+			this.codigo=codigo;
+			this.listaCalificacion= listaCalificacion;
+			this.genero=genero;
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -67,3 +78,6 @@ public class Juego {
     }
 	
 }
+
+
+	

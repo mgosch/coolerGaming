@@ -1,3 +1,4 @@
+package coolerGaming;
 import java.text.ParseException;
 
 public class Usuario {

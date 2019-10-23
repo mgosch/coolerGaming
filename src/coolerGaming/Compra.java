@@ -1,3 +1,4 @@
+package coolerGaming;
 
 public class Compra extends Transaccion{
 
