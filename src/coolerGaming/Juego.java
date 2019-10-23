@@ -12,13 +12,13 @@ public class Juego {
 	private List<Genero> genero;
 	
 	public Juego(String nombre, float precio, int porcentaje, String descripcion, long codigo, List<Calificacion> listaCalificacion, List<Genero> genero){
-			this.nombre=nombre;
-			this.precio=precio;
-			this.porcentaje=porcentaje;
-			this.descripcion=descripcion;
-			this.codigo=codigo;
-			this.listaCalificacion= listaCalificacion;
-			this.genero=genero;
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+		this.setPorcentaje(porcentaje);
+		this.setDescripcion(descripcion);
+		this.setCodigo(codigo);
+		this.setListaCalificacion(listaCalificacion);
+		this.setGenero(genero);
 	}
 	
 	public String getNombre() {

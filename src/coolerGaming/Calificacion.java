@@ -7,9 +7,9 @@ public class Calificacion {
 	private UsuarioRegistrado usuarioRegistrado;
 	
 	public Calificacion(String comentario, int puntaje, UsuarioRegistrado usuarioRegistrado) {
-		this.comentario = comentario;
-		this.puntaje = puntaje;
-		this.usuarioRegistrado = usuarioRegistrado;
+		this.setComentario(comentario);
+		this.setPuntaje(puntaje);
+		this.setUsuarioRegistrado(usuarioRegistrado);
 	}
 	
 	public String getComentario() {
