@@ -9,7 +9,7 @@ public class Transaccion {
 	private int cantJuegos;
 	private TarjetaDeCredito tarjetaDeCredito;
 	private UsuarioRegistrado usuarioRegistrado;
-        private List<Juego> juegos;
+    private List<Juego> juegos;
 	
 	public float getTotalTransaccion() {
 		return totalTransaccion;

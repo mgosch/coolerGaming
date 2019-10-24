@@ -7,7 +7,7 @@ public class Login {
 	private UsuarioRegistrado usuarioRegistrado;
 
     public Login(UsuarioRegistrado usuarioRegistrado) {
-        this.usuarioRegistrado = usuarioRegistrado;
+        this.setUsuarioRegistrado(usuarioRegistrado);
     }
 	
 	public Date getFecha() {

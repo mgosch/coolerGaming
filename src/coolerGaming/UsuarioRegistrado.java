@@ -16,13 +16,13 @@ public class UsuarioRegistrado {
 	private int telefono;
 
     public UsuarioRegistrado(String nombre, String apellido, String usuario, String contrasena, String fechaNacimiento, String mail, int telefono) throws ParseException{
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-        this.fechaNacimiento = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento);
-        this.mail = mail;
-        this.telefono = telefono;
+        this.setNombre(nombre);
+        this.setApellido(apellido);
+        this.setUsuario(usuario);
+        this.setContrasena(contrasena);
+        this.setFechaNacimiento(new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento));
+        this.setMail(mail);
+        this.setTelefono(telefono);
     }
 
     UsuarioRegistrado() {
