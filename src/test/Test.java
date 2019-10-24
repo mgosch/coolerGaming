@@ -47,7 +47,7 @@ public class Test {
     	listGenero.add(gen1);
     	listGenero.add(gen2);
     	
-    	Juego juego = new Juego("Pubg", 1500, 20, "videojuego de batalla en línea multijugador masivo", 001, listCalificacion, listGenero);
+    	Juego juego = new Juego("Pubg", 1500, 20, "videojuego de batalla en línea multijugador masivo", 001, listGenero);
     	List<Juego> listJuego = ur.buscarJuego();
     	System.out.println(listJuego);
     }

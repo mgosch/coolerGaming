@@ -8,16 +8,14 @@ public class Juego {
 	private int porcentaje;
 	private String descripcion;
 	private long codigo;
-	private List<Calificacion> listaCalificacion;
 	private List<Genero> genero;
 	
-	public Juego(String nombre, float precio, int porcentaje, String descripcion, long codigo, List<Calificacion> listaCalificacion, List<Genero> genero){
+	public Juego(String nombre, float precio, int porcentaje, String descripcion, long codigo, List<Genero> genero){
 		this.setNombre(nombre);
 		this.setPrecio(precio);
 		this.setPorcentaje(porcentaje);
 		this.setDescripcion(descripcion);
 		this.setCodigo(codigo);
-		this.setListaCalificacion(listaCalificacion);
 		this.setGenero(genero);
 	}
 	
@@ -61,14 +59,6 @@ public class Juego {
 		this.codigo = codigo;
 	}
 	
-	public List<Calificacion> getListaCalificacion() {
-		return listaCalificacion;
-	}
-
-	public void setListaCalificacion(List<Calificacion> listaCalificacion) {
-		this.listaCalificacion = listaCalificacion;
-	}
-
     public List<Genero> getGenero() {
         return genero;
     }
