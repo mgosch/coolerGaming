@@ -92,4 +92,8 @@ public class UsuarioRegistrado {
 		
 	}
 	
+	public String getUsuarioRegistrado() {
+		return this.getNombre() + ' ' + this.getApellido();
+	}
+	
 }
