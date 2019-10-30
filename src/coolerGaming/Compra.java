@@ -2,14 +2,15 @@ package coolerGaming;
 
 public class Compra extends Transaccion{
 
-	private int descuento;
+	private float descuento;
 
-	public int getDescuento() {
+	public float getDescuento() {
 		return descuento;
 	}
 
-	public void setDescuento(int descuento) {
+	public void setDescuento(float descuento) {
 		this.descuento = descuento;
 	}
+
 	
 }

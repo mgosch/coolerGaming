@@ -19,6 +19,10 @@ public class Juego {
 		this.setGenero(genero);
 	}
 	
+	public Juego() {
+	}
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
