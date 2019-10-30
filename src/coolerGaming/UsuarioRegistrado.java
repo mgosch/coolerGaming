@@ -97,13 +97,16 @@ public class UsuarioRegistrado {
 	}
 	
 	public String comprarJuego(Juego juego, TarjetaDeCredito tarjetaDeCredito) {
-		Compra compra = new Compra();
-		String mensaje =compra.verificarTarjeta(tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
-		if (mensaje.equals("Tarjeta Valida")) {
-			compra.setCantJuegos(1);
-			compra.setDescuento(juego.getPrecio()/juego.getPorcentaje());
-			compra.setTotalTransaccion(juego.getPrecio()-compra.getDescuento());
-			compra.setTarjetaDeCredito(tarjetaDeCredito);
+		Compra compra = new Compra(tarjetaDeCredito);
+		String mensaje = compra.verificarTarjeta(tarjetaDeCredito.getNumero(), tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
+		if (!mensaje.equals("Tarjeta Invalida")) {
+			compra.getJuegos().add(juego);
+			compra.setTotalTransaccion(juego.getPrecio());
+			if (compra.getTotalTransaccion()> tarjetaDeCredito.getCredito()){
+				mensaje = "Saldo insuficiente";
+			} else {
+				tarjetaDeCredito.setCredito(tarjetaDeCredito.getCredito()-compra.getTotalTransaccion());
+			}
 		}
 		return mensaje;
 	}

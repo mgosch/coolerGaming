@@ -1,5 +1,6 @@
 package coolerGaming;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -9,7 +10,7 @@ public class Transaccion {
 	private int cantJuegos;
 	private TarjetaDeCredito tarjetaDeCredito;
 	private UsuarioRegistrado usuarioRegistrado;
-    private List<Juego> juegos;
+    private List<Juego> juegos = new ArrayList<Juego>();
 	
 	public float getTotalTransaccion() {
 		return totalTransaccion;
@@ -51,11 +52,11 @@ public class Transaccion {
         this.juegos = juegos;
     }
     
-	public String verificarTarjeta(String codigoSeguridad, java.util.Date fechaExpiracion){
-	    if (tarjetaDeCredito.getCodigoSeguridad().equals(codigoSeguridad) && tarjetaDeCredito.getFechaExpiracion().equals(fechaExpiracion)) {
-	        return "Tarjeta valida";
+	public String verificarTarjeta(String numero, String codigoSeguridad, java.util.Date fechaExpiracion){
+	    if (!tarjetaDeCredito.getCodigoSeguridad().equals(codigoSeguridad) && tarjetaDeCredito.getFechaExpiracion().equals(fechaExpiracion)) {
+	    	return "Tarjeta invalida";
 	    } else {
-	        return "Tarjeta invalida";
+	    	return "Operación realizada. Descargando juego ...";
 	    }
 	}
 	

@@ -20,9 +20,15 @@ public class TestJuegos {
     	listGenero.add(gen1);
     	listGenero.add(gen2);
     	
-    	Juego juego = new Juego("Pubg", 1500, 20, "videojuego de batalla en línea multijugador masivo", 001, listGenero);
+    	Juego juego = new Juego("Pubg", 1500, 20, "videojuego de batalla en línea multijugador masivo", 001, listGenero);    	
+    	TarjetaDeCredito tC2 = new TarjetaDeCredito("4509790045234220", 1200, "23/09/2020", "383");
+    	String mensajeSaldo = ur.comprarJuego(juego, tC2);
+    	System.out.println(mensajeSaldo);
+    	
     	TarjetaDeCredito tC = new TarjetaDeCredito("4509790045234220", 7824, "23/09/2020", "383");
-    	ur.comprarJuego(juego, tC);
+    	String mensajeExitoso = ur.comprarJuego(juego, tC);
+    	System.out.println(mensajeExitoso);
+    	System.out.println("El saldo actual de la tarjeta es: $"+ tC.getCredito());
 	}
 
 }
