@@ -50,5 +50,13 @@ public class Transaccion {
     public void setJuegos(List<Juego> juegos) {
         this.juegos = juegos;
     }
+    
+	public String verificarTarjeta(String codigoSeguridad, java.util.Date fechaExpiracion){
+	    if (tarjetaDeCredito.getCodigoSeguridad().equals(codigoSeguridad) && tarjetaDeCredito.getFechaExpiracion().equals(fechaExpiracion)) {
+	        return "Tarjeta valida";
+	    } else {
+	        return "Tarjeta invalida";
+	    }
+	}
 	
 }

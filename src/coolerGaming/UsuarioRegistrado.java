@@ -87,13 +87,25 @@ public class UsuarioRegistrado {
 	}
 
 	public List<Juego> buscarJuego() {
-		List<Juego> listJuego = new ArrayList();
+		List<Juego> listJuego = new ArrayList<Juego>();
 		return listJuego;
 		
 	}
 	
 	public String getUsuarioRegistrado() {
 		return this.getNombre() + ' ' + this.getApellido();
+	}
+	
+	public String comprarJuego(Juego juego, TarjetaDeCredito tarjetaDeCredito) {
+		Compra compra = new Compra();
+		String mensaje =compra.verificarTarjeta(tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
+		if (mensaje.equals("Tarjeta Valida")) {
+			compra.setCantJuegos(1);
+			compra.setDescuento(juego.getPrecio()/juego.getPorcentaje());
+			compra.setTotalTransaccion(juego.getPrecio()-compra.getDescuento());
+			compra.setTarjetaDeCredito(tarjetaDeCredito);
+		}
+		return mensaje;
 	}
 	
 }

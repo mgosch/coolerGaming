@@ -5,6 +5,7 @@ public class Calificacion {
 	private String comentario;
 	private int puntaje;
 	private UsuarioRegistrado usuarioRegistrado;
+	private Juego juego;
 	
 	public Calificacion(String comentario, int puntaje, UsuarioRegistrado usuarioRegistrado) {
 		this.setComentario(comentario);
@@ -34,5 +35,13 @@ public class Calificacion {
 
 	public void setUsuarioRegistrado(UsuarioRegistrado usuarioRegistrado) {
 		this.usuarioRegistrado = usuarioRegistrado;
+	}
+
+	public Juego getJuego() {
+		return juego;
+	}
+
+	public void setJuego(Juego juego) {
+		this.juego = juego;
 	}
 }
