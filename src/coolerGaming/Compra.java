@@ -8,6 +8,15 @@ public class Compra extends Transaccion{
 		this.setTarjetaDeCredito(tarjetaDeCredito);
 	}
 
+	
+	public float getTotalTransaccion() {
+		float total = 0;
+		for (Juego juego : juegos) {
+			total += juego.getPrecio();
+		};
+		return total;
+	}
+	
 	public float getDescuento() {
 		return descuento;
 	}

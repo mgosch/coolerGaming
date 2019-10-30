@@ -9,7 +9,7 @@ import coolerGaming.Juego;
 import coolerGaming.TarjetaDeCredito;
 import coolerGaming.UsuarioRegistrado;
 
-public class TestJuegos {
+public class TestCompra {
 
 	public static void main(String[] args) throws ParseException {
         UsuarioRegistrado ur = new UsuarioRegistrado("Aldo", "Rico", "Admin", "Admin", "10/08/1983", "admin@admin,com", 42121212);

@@ -101,7 +101,6 @@ public class UsuarioRegistrado {
 		String mensaje = compra.verificarTarjeta(tarjetaDeCredito.getNumero(), tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
 		if (!mensaje.equals("Tarjeta Invalida")) {
 			compra.getJuegos().add(juego);
-			compra.setTotalTransaccion(juego.getPrecio());
 			if (compra.getTotalTransaccion()> tarjetaDeCredito.getCredito()){
 				mensaje = "Saldo insuficiente";
 			} else {

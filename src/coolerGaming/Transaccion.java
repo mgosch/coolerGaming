@@ -4,21 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Transaccion {
+public abstract class Transaccion {
 
-	private float totalTransaccion;
 	private int cantJuegos;
 	private TarjetaDeCredito tarjetaDeCredito;
 	private UsuarioRegistrado usuarioRegistrado;
-    private List<Juego> juegos = new ArrayList<Juego>();
+    protected List<Juego> juegos = new ArrayList<Juego>();
 	
-	public float getTotalTransaccion() {
-		return totalTransaccion;
-	}
-	
-	public void setTotalTransaccion(float totalTransaccion) {
-		this.totalTransaccion = totalTransaccion;
-	}
+	public abstract float getTotalTransaccion(); 
 	
 	public int getCantJuegos() {
 		return cantJuegos;
