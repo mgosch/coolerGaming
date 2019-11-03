@@ -96,15 +96,31 @@ public class UsuarioRegistrado {
 		return this.getNombre() + ' ' + this.getApellido();
 	}
 	
-	public String comprarJuego(Juego juego, TarjetaDeCredito tarjetaDeCredito) {
+	public String comprarJuego(List<Juego> listJuego, TarjetaDeCredito tarjetaDeCredito) {
 		Compra compra = new Compra(tarjetaDeCredito);
 		String mensaje = compra.verificarTarjeta(tarjetaDeCredito.getNumero(), tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
-		if (!mensaje.equals("Tarjeta Invalida")) {
-			compra.getJuegos().add(juego);
+		if (mensaje.equals("Tarjeta valida")) {
+			compra.setJuegos(listJuego);;
 			if (compra.getTotalTransaccion()> tarjetaDeCredito.getCredito()){
 				mensaje = "Saldo insuficiente";
 			} else {
 				tarjetaDeCredito.setCredito(tarjetaDeCredito.getCredito()-compra.getTotalTransaccion());
+				mensaje = "Operación realizada. El valor de la compra es $: "+  compra.getTotalTransaccion() + ". Descargando juego ...";
+			}
+		}
+		return mensaje;
+	}
+
+	public String alquilarJuego(List<Juego> listJuego, TarjetaDeCredito tC, int tiempoJuego) {
+		Alquiler alquiler = new Alquiler(tC, tiempoJuego);
+		String mensaje = alquiler.verificarTarjeta(tC.getNumero(), tC.getCodigoSeguridad(), tC.getFechaExpiracion());
+		if (mensaje.equals("Tarjeta valida")) {
+			alquiler.setJuegos(listJuego);;
+			if (alquiler.getTotalTransaccion()> tC.getCredito()){
+				mensaje = "Saldo insuficiente";
+			} else {
+				tC.setCredito(tC.getCredito()-alquiler.getTotalTransaccion());
+				mensaje = "Operación realizada. El valor del alquiler es $: "+  alquiler.getTotalTransaccion() + ". Descargando juego ...";
 			}
 		}
 		return mensaje;

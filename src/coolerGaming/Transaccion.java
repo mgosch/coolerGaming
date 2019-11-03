@@ -3,6 +3,8 @@ package coolerGaming;
 import java.util.ArrayList;
 import java.util.List;
 
+import test.Sistema;
+
 
 public abstract class Transaccion {
 
@@ -46,10 +48,11 @@ public abstract class Transaccion {
     }
     
 	public String verificarTarjeta(String numero, String codigoSeguridad, java.util.Date fechaExpiracion){
-	    if (!tarjetaDeCredito.getCodigoSeguridad().equals(codigoSeguridad) && tarjetaDeCredito.getFechaExpiracion().equals(fechaExpiracion)) {
+		Sistema sist = new Sistema();
+	    if (!sist.isValidTarjeta(numero, codigoSeguridad, fechaExpiracion)) {
 	    	return "Tarjeta invalida";
 	    } else {
-	    	return "Operación realizada. Descargando juego ...";
+	    	return "Tarjeta valida";
 	    }
 	}
 	

@@ -12,8 +12,9 @@ public class Compra extends Transaccion{
 	public float getTotalTransaccion() {
 		float total = 0;
 		for (Juego juego : juegos) {
-			total += juego.getPrecio();
-		};
+			descuento = juego.getPrecio()*juego.getPorcentaje()/100;
+			total += juego.getPrecio()-descuento;
+		}
 		return total;
 	}
 	
