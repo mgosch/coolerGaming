@@ -7,10 +7,10 @@ public class Calificacion {
 	private UsuarioRegistrado usuarioRegistrado;
 	private Juego juego;
 	
-	public Calificacion(String comentario, int puntaje, UsuarioRegistrado usuarioRegistrado) {
+	public Calificacion(String comentario, int puntaje, Juego juego) {
 		this.setComentario(comentario);
 		this.setPuntaje(puntaje);
-		this.setUsuarioRegistrado(usuarioRegistrado);
+		this.setJuego(juego);
 	}
 	
 	public String getComentario() {
@@ -44,4 +44,5 @@ public class Calificacion {
 	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
+	
 }

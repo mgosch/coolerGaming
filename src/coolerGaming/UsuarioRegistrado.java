@@ -1,7 +1,6 @@
 package coolerGaming;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -85,12 +84,6 @@ public class UsuarioRegistrado {
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
-
-	public List<Juego> buscarJuego() {
-		List<Juego> listJuego = new ArrayList<Juego>();
-		return listJuego;
-		
-	}
 	
 	public String getUsuarioRegistrado() {
 		return this.getNombre() + ' ' + this.getApellido();
@@ -124,6 +117,11 @@ public class UsuarioRegistrado {
 			}
 		}
 		return mensaje;
+	}
+
+	public int calificaJuego(Juego juego, int puntaje, String comentario) {
+		Calificacion cal = new Calificacion(comentario, puntaje, juego);
+		return cal.getPuntaje();
 	}
 	
 }
