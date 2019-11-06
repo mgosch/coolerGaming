@@ -89,31 +89,27 @@ public class UsuarioRegistrado {
 		return this.getNombre() + ' ' + this.getApellido();
 	}
 	
-	public String comprarJuego(List<Juego> listJuego, TarjetaDeCredito tarjetaDeCredito) {
-		Compra compra = new Compra(tarjetaDeCredito);
-		String mensaje = compra.verificarTarjeta(tarjetaDeCredito.getNumero(), tarjetaDeCredito.getCodigoSeguridad(), tarjetaDeCredito.getFechaExpiracion());
-		if (mensaje.equals("Tarjeta valida")) {
-			compra.setJuegos(listJuego);;
-			if (compra.getTotalTransaccion()> tarjetaDeCredito.getCredito()){
-				mensaje = "Saldo insuficiente";
-			} else {
-				tarjetaDeCredito.setCredito(tarjetaDeCredito.getCredito()-compra.getTotalTransaccion());
-				mensaje = "Operación realizada. El valor de la compra es $: "+  compra.getTotalTransaccion() + ". Descargando juego ...";
-			}
-		}
+	public String comprarJuego(List<Juego> listJuego, TarjetaDeCredito tC) {
+		Compra compra = new Compra(tC);
+		String mensaje = validaciones(listJuego, tC, compra);
 		return mensaje;
 	}
 
 	public String alquilarJuego(List<Juego> listJuego, TarjetaDeCredito tC, int tiempoJuego) {
 		Alquiler alquiler = new Alquiler(tC, tiempoJuego);
-		String mensaje = alquiler.verificarTarjeta(tC.getNumero(), tC.getCodigoSeguridad(), tC.getFechaExpiracion());
+		String mensaje = validaciones(listJuego, tC, alquiler);
+		return mensaje;
+	}
+
+	private String validaciones(List<Juego> listJuego, TarjetaDeCredito tC, Transaccion alquilerCompra) {
+		String mensaje = alquilerCompra.verificarTarjeta(tC.getNumero(), tC.getCodigoSeguridad(), tC.getFechaExpiracion());
 		if (mensaje.equals("Tarjeta valida")) {
-			alquiler.setJuegos(listJuego);;
-			if (alquiler.getTotalTransaccion()> tC.getCredito()){
+			alquilerCompra.setJuegos(listJuego);
+			if (alquilerCompra.getTotalTransaccion()> tC.getCredito()){
 				mensaje = "Saldo insuficiente";
 			} else {
-				tC.setCredito(tC.getCredito()-alquiler.getTotalTransaccion());
-				mensaje = "Operación realizada. El valor del alquiler es $: "+  alquiler.getTotalTransaccion() + ". Descargando juego ...";
+				tC.setCredito(tC.getCredito()-alquilerCompra.getTotalTransaccion());
+				mensaje = "Operación realizada. El valor del alquiler es $: "+  alquilerCompra.getTotalTransaccion() + ". Descargando juego ...";
 			}
 		}
 		return mensaje;

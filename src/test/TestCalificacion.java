@@ -21,11 +21,12 @@ public class TestCalificacion {
     	listGenero.add(gen2);
     	
     	Juego juego = new Juego("Pubg", 1500, 5, "videojuego de batalla en línea multijugador masivo", 001, listGenero); 
+    	Juego juego2 = new Juego("Pacman", 800, 3, "videojuego retro", 002, listGenero); 
 
-    	int Calificacion = ur.calificaJuego(juego, 10 , "Muy buen juego");
-    	System.out.println(Calificacion);
+    	int Calificacion = ur.calificaJuego(juego2, 10 , "Muy buen juego");
+    	System.out.println("La calificación del juego es: "+ Calificacion);
     	int Calificacion2 =ur1.calificaJuego(juego, 8, "Esta bueno");
-    	System.out.println(Calificacion2);
+    	System.out.println("La calificación del juego es: " + Calificacion2);
     	
 	}
 

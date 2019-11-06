@@ -11,4 +11,20 @@ public class Sistema {
 			return false;
 		}
 	}
+	
+	public boolean isJuegoAlquilado(String juego) {
+		if (juego.equals("Pacman")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public int getPuntaje(String juego) {
+		if (juego.equals("Pacman")) {
+			return 8;
+		} else {
+			return 0;
+		}
+	}
 }

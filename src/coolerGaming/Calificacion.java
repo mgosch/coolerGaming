@@ -1,5 +1,7 @@
 package coolerGaming;
 
+import test.Sistema;
+
 public class Calificacion {
 
 	private String comentario;
@@ -22,6 +24,9 @@ public class Calificacion {
 	}
 	
 	public int getPuntaje() {
+		Sistema sist = new Sistema();
+		int puntajeAnterior = sist.getPuntaje(juego.getNombre());
+		puntaje = (puntaje + puntajeAnterior)/2;
 		return puntaje;
 	}
 	
